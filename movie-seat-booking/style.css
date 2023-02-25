@@ -5,4 +5,104 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: #242333;
+}
+
+div.movie-picker {
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.movie-picker > span {
+  color: white;
+  margin: 0px 10px;
+  font-size : 16px;
+}
+
+div.movie-picker > select {
+  padding: 5px 15px;
+  border: 0px;
+  border-radius: 5px;
+  display: inline-block;
+  appearance: none;
+}
+
+div.showcase {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div.category {
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.category > div {
+  display: inline-block;
+}
+
+div.category > span {
+  font-size: 14px;
+  color: #777777;
+}
+
+div.theator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.screen {
+  height: 60px;
+  width: calc(100% - 40px);
+  background-color: white;
+  margin: 30px;
+  box-shadow: 0px 0px 10px 3px rgb(204, 186, 186);
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seat {
+  width: 15px;
+  height: 15px;
+  margin: 3px;
+  border-radius: 15px 15px 5px 5px;
+  background-color: #444451;
+  cursor: pointer;
+}
+
+.side {
+  margin-right : 18px;
+}
+
+.occupied {
+  background-color: white;
+  cursor: default;
+}
+
+.selected {
+  background-color: aqua;
+}
+
+p.calculator {
+  color: white;
+}
+
+p.calculator > span {
+  color: aqua;
 }
