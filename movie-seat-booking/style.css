@@ -48,6 +48,7 @@ div.category {
 
 div.category > div {
   display: inline-block;
+  cursor: default;
 }
 
 div.category > span {

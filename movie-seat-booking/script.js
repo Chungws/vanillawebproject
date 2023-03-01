@@ -15,7 +15,7 @@ function handleGetLocalStorage() {
   moviePicker.selectedIndex = Number(localStorage.getItem("movieIndex")) || 0;
   const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats")) || [];
   seats.forEach((seat, idx) => {
-    if (selectedSeats?.[idx]) {
+    if (selectedSeats[idx]) {
       seat.classList.add("selected");
     }
   });
@@ -57,7 +57,6 @@ moviePicker.addEventListener("change", handleSelectMovie);
 moviePicker.addEventListener("change", handleSetMovieIndexToLocalStorage);
 
 seats
-  .filter(seat => !seat.classList.contains("occupied"))
   .forEach(seat => {
     seat.addEventListener("click", handleSelectSeat);
     seat.addEventListener("click", handleSetSelectedSeatsToLocalStorage);
