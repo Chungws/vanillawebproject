@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Custom Video Player</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1>Custom Video Player</h1>
+    <div class="player">
+      <video class="video" poster="assets/image/poster.png">
+        <source src="assets/video/gone.mp4" type="video/mp4">
+      </video>
+      <div class="video-controller">
+        <button class="play-button">
+          <div></div>
+        </button>
+        <button class="pause-button hidden">
+          <div></div>
+          <div></div>
+        </button>
+        <button class="stop-button">
+          <div></div>
+        </button>
+        <input type="range" class="progress-bar" value="0" min="0" max="100" />
+        <span class="timestamp">00:00</span>
+      </div>
+    </div>
+    <script src="./script.js" async defer></script>
+  </body>
+</html>
