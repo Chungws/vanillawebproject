@@ -1,11 +1,11 @@
 body {
-  margin: 0px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #777777;
+  background-color: #777;
 }
 
 h1 {
@@ -36,7 +36,7 @@ div.video-controller {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #333333;
+  background-color: #333;
 }
 
 button {
@@ -92,7 +92,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
   margin-top: -12px;
   appearance: none;
   background-color: white;
