@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exchange Rate Calculator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <img src="./image/money.png" />
+    <h1 class="title">Exchange Rate Calculator</h2>
+    <p>Choose the currency and the amounts to get the exchange rate</p>
+    <div class="container">
+      <div class="currency-box">
+        <select id="currency-country1"></select>
+        <input type="number" id="currency-account1" placeholder="0" value="1"/>
+      </div>
+      <div class="swap-rate-box">
+        <button>
+          Swap
+        </button>
+        <p></p>
+      </div>
+      <div class="currency-box">
+        <select id="currency-country2"></select>
+        <input type="number" id="currency-account2" placeholder="0" disabled/>
+      </div>
+    </div>
+    <script src="./script.js" async defer></script>
+  </body>
+</html>
