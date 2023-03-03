@@ -1,10 +1,10 @@
-const moviePicker = document.querySelector("select.movie-picker");
-const seats = Array.from(document.querySelectorAll("div.row > .seat")).filter(seat => !seat.classList.contains("occupied"));
-const countSpan = document.getElementById("count");
-const priceSpan = document.getElementById("price");
+const moviePicker = document.querySelector('select.movie-picker');
+const seats = Array.from(document.querySelectorAll('div.row > .seat')).filter((seat) => !seat.classList.contains('occupied'));
+const countSpan = document.getElementById('count');
+const priceSpan = document.getElementById('price');
 
 function calculateMoviePrice() {
-  const count = seats.filter(seat => seat.classList.contains("selected")).length;
+  const count = seats.filter((seat) => seat.classList.contains('selected')).length;
   const price = Number(moviePicker.options[moviePicker.selectedIndex].value);
 
   countSpan.innerHTML = count;
@@ -12,37 +12,37 @@ function calculateMoviePrice() {
 }
 
 function handleGetLocalStorage() {
-  moviePicker.selectedIndex = Number(localStorage.getItem("movieIndex")) || 0;
-  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats")) || [];
+  moviePicker.selectedIndex = Number(localStorage.getItem('movieIndex')) || 0;
+  const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats')) || [];
   seats.forEach((seat, idx) => {
     if (selectedSeats[idx]) {
-      seat.classList.add("selected");
+      seat.classList.add('selected');
     }
   });
   calculateMoviePrice();
 }
 
 function handleSetMovieIndexToLocalStorage() {
-  localStorage.setItem("movieIndex", moviePicker.selectedIndex || 0);
+  localStorage.setItem('movieIndex', moviePicker.selectedIndex || 0);
   calculateMoviePrice();
 }
 
 function handleSetSelectedSeatsToLocalStorage() {
-  const selectedSeats = seats.map(seat => {
-    if (seat.classList.contains("selected")) {
+  const selectedSeats = seats.map((seat) => {
+    if (seat.classList.contains('selected')) {
       return true;
     }
     return false;
-  })
-  localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
+  });
+  localStorage.setItem('selectedSeats', JSON.stringify(selectedSeats));
 }
 
 function handleSelectSeat(e) {
   const seat = e.target;
-  if (!seat.classList.contains("selected")) {
-    e.target.classList.add("selected");
+  if (!seat.classList.contains('selected')) {
+    e.target.classList.add('selected');
   } else {
-    e.target.classList.remove("selected");
+    e.target.classList.remove('selected');
   }
   calculateMoviePrice();
 }
@@ -51,13 +51,13 @@ function handleSelectMovie() {
   calculateMoviePrice();
 }
 
-window.addEventListener("load", handleGetLocalStorage);
+window.addEventListener('load', handleGetLocalStorage);
 
-moviePicker.addEventListener("change", handleSelectMovie);
-moviePicker.addEventListener("change", handleSetMovieIndexToLocalStorage);
+moviePicker.addEventListener('change', handleSelectMovie);
+moviePicker.addEventListener('change', handleSetMovieIndexToLocalStorage);
 
 seats
-  .forEach(seat => {
-    seat.addEventListener("click", handleSelectSeat);
-    seat.addEventListener("click", handleSetSelectedSeatsToLocalStorage);
-  })
+  .forEach((seat) => {
+    seat.addEventListener('click', handleSelectSeat);
+    seat.addEventListener('click', handleSetSelectedSeatsToLocalStorage);
+  });

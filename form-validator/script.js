@@ -1,37 +1,37 @@
-const usernameInput = document.getElementById("username");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const confimPasswordInput = document.getElementById("confirmPassword");
-const submitButton = document.getElementById("submitButton");
+const usernameInput = document.getElementById('username');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confimPasswordInput = document.getElementById('confirmPassword');
+const submitButton = document.getElementById('submitButton');
 
-const initialErrorMessage = "Error message";
+const initialErrorMessage = 'Error message';
 
 function setError(input, message) {
-  input.classList.remove("correct");
-  input.classList.add("error");
+  input.classList.remove('correct');
+  input.classList.add('error');
   const errorMessage = input.nextElementSibling;
   errorMessage.innerText = message;
-  errorMessage.classList.remove("hide");
+  errorMessage.classList.remove('hide');
 }
 
-function setCorrect(input, message=initialErrorMessage) {
-  input.classList.remove("error");
-  input.classList.add("correct");
+function setCorrect(input, message = initialErrorMessage) {
+  input.classList.remove('error');
+  input.classList.add('correct');
   const errorMessage = input.nextElementSibling;
   errorMessage.innerText = message;
-  errorMessage.classList.add("hide");
+  errorMessage.classList.add('hide');
 }
 
 function checkRequired(inputs) {
   let isRequired = true;
-  inputs.forEach(input => {
-    if (input.value === "") {
+  inputs.forEach((input) => {
+    if (input.value === '') {
       setError(input, `${input.previousElementSibling.innerText} is required`);
       isRequired = false;
     } else {
       setCorrect(input);
     }
-  })
+  });
   return isRequired;
 }
 
@@ -51,26 +51,26 @@ function checkEmail() {
   if (regex.test(emailInput.value)) {
     setCorrect(emailInput);
   } else {
-    setError(emailInput, `Email is not valid`);
+    setError(emailInput, 'Email is not valid');
   }
 }
 
 function checkPassworkdsMatch() {
   const password = passwordInput.value;
   const confirmPassword = confimPasswordInput.value;
-  if (confirmPassword === "") return;
+  if (confirmPassword === '') return;
   if (password !== confirmPassword) {
-    setError(confimPasswordInput, "Passwords do not match");
+    setError(confimPasswordInput, 'Passwords do not match');
   }
 }
 
 function handleClickSubmitButton(e) {
   e.preventDefault();
-  checkRequired([usernameInput, emailInput, passwordInput, confimPasswordInput])
+  checkRequired([usernameInput, emailInput, passwordInput, confimPasswordInput]);
   checkLength(usernameInput, 3, 15);
   checkLength(passwordInput, 6, 25);
   checkEmail();
   checkPassworkdsMatch();
 }
 
-submitButton.addEventListener("click", handleClickSubmitButton);
+submitButton.addEventListener('click', handleClickSubmitButton);

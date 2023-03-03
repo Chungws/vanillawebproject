@@ -19,7 +19,7 @@ div.movie-picker {
 div.movie-picker > span {
   color: white;
   margin: 0 10px;
-  font-size : 16px;
+  font-size: 16px;
 }
 
 div.movie-picker > select {
@@ -88,7 +88,7 @@ div.row {
 }
 
 .side {
-  margin-right : 18px;
+  margin-right: 18px;
 }
 
 .occupied {

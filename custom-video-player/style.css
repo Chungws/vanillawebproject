@@ -50,11 +50,11 @@ button {
 
 button.play-button > div {
   width: 0;
-	height: 0;
+  height: 0;
   background-color: transparent;
-	border-top: 15px solid transparent;
-	border-left: 30px solid green;
-	border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-left: 30px solid green;
+  border-bottom: 15px solid transparent;
 }
 
 button.pause-button > div {
