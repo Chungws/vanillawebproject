@@ -47,7 +47,7 @@ div.person-container {
 
 h2.category {
   border-bottom: 1px solid #111;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
