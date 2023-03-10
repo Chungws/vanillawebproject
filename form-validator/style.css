@@ -7,9 +7,14 @@ body {
   min-height: 100vh;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 div.container {
   width: 400px;
   height: 550px;
+  background-color: #f2f2f2;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 30%);
 }
@@ -26,7 +31,7 @@ form {
   height: calc(100% - 60px);
 }
 
-h2 {
+h2.title {
   margin: 0;
   text-align: center;
 }
@@ -47,7 +52,7 @@ small.hide {
 }
 
 input {
-  width: calc(100% - 24px);
+  width: 100%;
   padding: 10px;
   border: 2px solid #F0F0F0;
   border-radius: 4px;
@@ -62,7 +67,7 @@ input.error {
   border: 2px solid red;
 }
 
-button {
+form > button.submit {
   width: 100%;
   color:white;
   margin-top: 20px;

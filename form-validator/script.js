@@ -1,8 +1,8 @@
 const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
-const confimPasswordInput = document.getElementById('confirmPassword');
-const submitButton = document.getElementById('submitButton');
+const confimPasswordInput = document.getElementById('confirm-password');
+const submitButton = document.getElementById('submit-button');
 
 const initialErrorMessage = 'Error message';
 
@@ -64,8 +64,7 @@ function checkPassworkdsMatch() {
   }
 }
 
-function handleClickSubmitButton(e) {
-  e.preventDefault();
+function handleClickSubmitButton() {
   checkRequired([usernameInput, emailInput, passwordInput, confimPasswordInput]);
   checkLength(usernameInput, 3, 15);
   checkLength(passwordInput, 6, 25);

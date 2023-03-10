@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Landing Page</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../form-validator/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><img src="./image/profile.jpg" alt="user"/></div>
+      <hr/>
+      <div><a>Home</a></div>
+      <hr/>
+      <div><a>Portfolio</a></div>
+      <hr/>
+      <div><a>Blog</a></div>
+      <hr/>
+      <div><a>Contact Me</a></div>
+      <hr/>
+    </nav>
+    <main>
+      <header>
+        <button class="hamburger">
+          <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <h1>My Landing Page</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, amet!</p>
+        <button class="sign-up">Sign Up</button>
+      </header>
+      <article>
+        <h2>What is this landing page about?</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iure accusamus ab consectetur eos provident ipsa est perferendis architecto. Provident, quaerat asperiores. Quo esse minus repellat sapiente, impedit obcaecati necessitatibus.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente optio officia ipsa. Cum dignissimos possimus et non provident facilis saepe!</p>
+        <h2>Tell Me More</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat eaque delectus explicabo qui reprehenderit? Aspernatur ad similique minima accusamus maiores accusantium libero autem iusto reiciendis ullam impedit esse quibusdam, deleniti laudantium rerum beatae, deserunt nemo neque, obcaecati exercitationem sit. Earum.</p>
+        <h2>Benefits</h2>
+        <ul>
+          <li>Lifetime Access</li>
+          <li>30 Day Money Back</li>
+          <li>Tailored Customer Support</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quam nostrum, fugiat, itaque natus officia laborum dolorum id accusantium culpa architecto tenetur fuga? Consequatur provident rerum eius ratione dolor officiis doloremque minima optio dignissimos doloribus odio debitis vero cumque itaque excepturi a neque, expedita nulla earum accusamus repellat adipisci veritatis quam. Ipsum fugiat iusto pariatur consectetur quas libero dolor dolores dolorem, nostrum ducimus doloremque placeat accusamus iste, culpa quaerat consequatur?</p>
+      </article>
+    </main>
+    <!-- modal from form-validator -->
+    <div class="modal hidden">
+      <div class="modal-background"></div>
+      <div class="container">
+        <form>
+          <h2>Register With Us</h2>
+          <div class="formcontrol">
+            <p class="field-name">Username</p>
+            <input type="text" id="username" placeholder="Enter username" />
+            <small class="error hide">Error message</small>
+          </div>
+          <div class="formcontrol">
+            <p class="field-name">Email</p>
+            <input type="text" id="email" placeholder="Enter email" />
+            <small class="error hide">Error message</small>
+          </div>
+          <div class="formcontrol">
+            <p class="field-name">Password</p>
+            <input type="password" id="password" placeholder="Enter password" />
+            <small class="error hide">Error message</small>
+          </div>
+          <div class="formcontrol">
+            <p class="field-name">Confirm Password</p>
+            <input
+              type="password"
+              id="confirm-password"
+              placeholder="Enter password again"
+            />
+            <small class="error hide">Error message</small>
+          </div>
+          <button type="button" class="submit" id="submit-button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="../form-validator/script.js" async defer></script>
+    <script src="./script.js" async defer></script>
+  </body>
+</html>
