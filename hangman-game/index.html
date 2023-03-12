@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hangman Game</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Hangman</h1>
+      <p>Find the hidden country - Enter a letter</p>
+      <div class="display">
+        <svg width="200" height="230" viewBox="0 0 200 230">
+          <g id="pole">
+            <line x1="4" y1="220" x2="76" y2="220" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+            <line x1="40" y1="220" x2="40" y2="20" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+            <line x1="40" y1="20" x2="120" y2="20" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+            <line x1="120" y1="20" x2="120" y2="50" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+          </g>
+          <circle class="hangman hidden" cx="120" cy="70" r="20" stroke-width="4" stroke="#f2f2f2" fill="none" />
+          <line class="hangman hidden" x1="120" y1="90" x2="120" y2="150" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+          <line class="hangman hidden" x1="120" y1="120" x2="100" y2="100" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+          <line class="hangman hidden" x1="120" y1="120" x2="140" y2="100" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+          <line class="hangman hidden" x1="120" y1="150" x2="100" y2="180" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+          <line class="hangman hidden" x1="120" y1="150" x2="140" y2="180" stroke-width="4" stroke="#f2f2f2" stroke-linecap="round" />
+        </svg>
+        <div class="wrong hidden">
+          <p>Wrong</p>
+          <h2 class="wrong-letters"></h2>
+        </div>
+      </div>
+      <div class="word-container">
+        <span class="letter"></span>
+      </div>
+    </main>
+    <!-- modal -->
+    <div class="modal-container hidden">
+      <div class="modal-background"></div>
+      <div class="modal">
+        <h2></h2>
+        <p class="hidden"></p>
+        <button>Play Again</button>
+      </div>
+    </div>
+    <!-- toast -->
+    <div class="toast">
+      <p>You have already entered this letter</p>
+    </div>
+    <script type="module" src="./script.js" async defer>
+      "use strict";
+    </script>
+  </body>
+</html>
