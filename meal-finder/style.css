@@ -1,0 +1,130 @@
+:root {
+  --primary-color: #2d2013;
+  --white: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--primary-color);
+}
+
+h1, h2, h3, p {
+  text-align: center;
+  color: var(--white);
+}
+
+input[type="text"] {
+  width: 300px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+button {
+  margin: 0;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--white);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button#search {
+  border-radius: 0 4px 4px 0;
+}
+
+button#random {
+  margin-left: 10px;
+}
+
+img {
+  border: 4px solid var(--white);
+  border-radius: 2px;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.meal {
+  position: relative;
+}
+
+.meal > img {
+  width: 180px;
+  height: 180px;
+}
+
+.meal-name {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0 0 0 / 60%);
+  color: var(--white);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.meal > .meal-name {
+  opacity: 0;
+}
+
+.meal:hover > .meal-name {
+  opacity: 100;
+}
+
+.brief {
+  width: 100%;
+  margin: 40px 0 0;
+  padding: 10px 0;
+  display: block;
+  border: 2px dashed #e09850;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.meal-info {
+  width: 50vw;
+}
+
+.meal-info > img {
+  width: 300px;
+  height: 300px;
+}
+
+.ingredients > li {
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: var(--white);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}

@@ -9,5 +9,8 @@
     "no-param-reassign": [2, { 
       "props": false
     }]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
   }
 }
