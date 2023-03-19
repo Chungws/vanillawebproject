@@ -103,10 +103,10 @@ const updateMeal = (mealEl, meal) => {
 
   const mealNameText = mealEl.querySelector('div > h3');
   mealNameText.textContent = strMeal;
-  mealEl.addEventListener('click', () => {
+  mealEl.onclick = () => {
     renderInfo();
     updateMealInfo(meal);
-  });
+  };
 };
 
 const processMeal = (mealEl, meal) => {
