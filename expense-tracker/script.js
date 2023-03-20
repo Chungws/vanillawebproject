@@ -87,16 +87,10 @@ const updateHistory = () => {
 
     const deleteButton = history.querySelector('button');
     deleteButton.addEventListener('click', () => {
-      deleteExpense(id);
       history.remove();
-      updateSummary();
+      deleteExpense(id);
     });
   });
-};
-
-const updateAll = () => {
-  updateSummary();
-  updateHistory();
 };
 
 const handleClickAddTransactionButton = (e) => {
@@ -113,14 +107,19 @@ const handleClickAddTransactionButton = (e) => {
   saveNewTransaction(text, amount);
   textEl.value = '';
   amountEl.value = '';
-  updateAll();
+};
+
+const handleChangeLocalStorage = () => {
+  updateSummary();
+  updateHistory();
 };
 
 const loadExpenses = () => {
   expenses = JSON.parse(localStorage.getItem('expenses')) || {};
-  updateAll();
+  handleChangeLocalStorage();
 };
 
 window.addEventListener('load', loadExpenses);
+window.addEventListener('storage', handleChangeLocalStorage);
 
 addTransactionButton.addEventListener('click', handleClickAddTransactionButton);
