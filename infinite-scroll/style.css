@@ -43,14 +43,14 @@ article {
 article > div {
   width: 40px;
   height: 40px;
-  padding: 10px;
+  padding: 10px 5px;
   position: absolute;
   top: -20px;
   left: -20px;
   border-radius: 100%;
   background-color: var(--white);
   text-align: center;
-  font-size: 1em;
+  font-size: 15px;
   color: var(--secondary-color);
 }
 
