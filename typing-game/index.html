@@ -6,16 +6,36 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
   </head>
   <body class="container">
     <nav>
       <span>Difficulty</span>
+      <form>
+        <select>
+          <option value="hard">Hard</option>
+          <option value="medium" selected>Medium</option>
+          <option value="easy">Easy</option>
+        </select>
+      </form>
     </nav>
     <main class="container">
-
+      <div class="game container">
+        <h2>👩‍💻 Speed Typer 👨‍💻</h2>
+        <span class="time">Time left: 10</span>
+        <span class="score">Score: 0</span>
+        <p>Type the following:</p>
+        <h1>Start!</h1>
+        <input type="text" placeholder="Type the word here..."/>
+      </div>
+      <div class="end container hidden">
+        <h1>Time ran out</h1>
+        <p>Your final score is 0</p>
+        <button>Reload</button>
+      </div>
     </main>
     <button class="setting">
-      <p>H</p>
+      <i class="fas fa-cog"></i>
     </button>
     <script src="./script.js" async defer></script>
   </body>
