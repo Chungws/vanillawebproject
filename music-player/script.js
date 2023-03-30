@@ -1,6 +1,6 @@
-const playPauseButton = document.querySelector("#center-button");
-const forwardButton = document.querySelector("#forward-button")
-const backwardButton = document.querySelector("#backward-button")
+const playPauseButton = document.querySelector('#center-button');
+const forwardButton = document.querySelector('#forward-button');
+const backwardButton = document.querySelector('#backward-button');
 const thumbnail = document.querySelector('.spinner > img.thumbnail');
 const toast = document.querySelector('.toast');
 const musicEl = document.querySelector('audio');
@@ -8,28 +8,28 @@ const title = document.querySelector('.toast-info > p');
 const progressBar = document.querySelector('.toast-info > input[type="range"]');
 
 const musicList = [
-  "hey",
-  "summer",
-  "ukulele",
-]
+  'hey',
+  'summer',
+  'ukulele',
+];
 
 function getNextMusic(curr) {
-  const idx = musicList.findIndex(music => music === curr);
+  const idx = musicList.findIndex((music) => music === curr);
   return musicList[idx + 1] || musicList[0];
 }
 
 function getPrevMusic(curr) {
-  const idx = musicList.findIndex(music => music === curr);
+  const idx = musicList.findIndex((music) => music === curr);
   return musicList[idx - 1] || musicList[musicList.length - 1];
 }
 
 const isPlaying = () => {
   const [play] = Array.from(playPauseButton.children);
   return play.classList.contains('hidden');
-}
+};
 
 const loadMusic = (getMusic) => {
-  const currMusicName = musicEl.getAttribute('src')?.split("/")[1]?.split(".")[0];
+  const currMusicName = musicEl.getAttribute('src')?.split('/')[1]?.split('.')[0];
   const newMusicName = getMusic(currMusicName);
   const musicFile = `music/${newMusicName}.mp3`;
   const musicThumbnail = `images/${newMusicName}.jpg`;
@@ -41,24 +41,24 @@ const loadMusic = (getMusic) => {
   if (isPlaying()) {
     musicEl.play();
   }
-}
+};
 
 playPauseButton.addEventListener('click', () => {
   const [play, pause] = Array.from(playPauseButton.children);
   if (play.classList.contains('hidden')) {
-    play.classList.remove('hidden')
-    pause.classList.add('hidden')
-    toast.classList.remove('show')
-    thumbnail.classList.add('pause')
+    play.classList.remove('hidden');
+    pause.classList.add('hidden');
+    toast.classList.remove('show');
+    thumbnail.classList.add('pause');
     musicEl.pause();
   } else {
-    play.classList.add('hidden')
-    pause.classList.remove('hidden')
-    toast.classList.add('show')
-    thumbnail.classList.remove('pause')
+    play.classList.add('hidden');
+    pause.classList.remove('hidden');
+    toast.classList.add('show');
+    thumbnail.classList.remove('pause');
     musicEl.play();
   }
-})
+});
 
 progressBar.addEventListener('input', () => {
   musicEl.currentTime = (progressBar.value / progressBar.max) * musicEl.duration;
