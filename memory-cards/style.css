@@ -1,0 +1,189 @@
+:root {
+  --primary-color: #f2f2f2;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: block;
+  background-color: var(--primary-color);
+}
+
+h1, h2, h3, h4, p, span {
+  text-align: center;
+}
+
+main {
+  position: relative;
+}
+
+button {
+  padding: 10px 14px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+header {
+  position: relative;
+}
+
+header > button {
+  position: absolute;
+  top: 35px;
+  right: -130px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  width: 520px;
+  height: 320px;
+  padding: 10px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  margin-right: 20px;
+  flex: 0 0 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(50%) rotateY(-10deg);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.card.active {
+  transform: translateX(0) rotateY(0deg);
+  opacity: 1;
+  z-index: 99;
+}
+
+.card.left {
+  transform: translateX(-50%) rotateY(10deg);
+  opacity: 0;
+}
+
+.card > div.icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #ccc;
+  font-size: 17px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow:  0 1px 10px 0 rgba(0 0 0 / 20%);
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+}
+
+.card-inner > div.front,
+.card-inner > div.back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+
+.card-inner > div.back {
+  transform: translate(-50%, -50%) rotateX(180deg);
+}
+
+.card-inner > div.front > p,
+.card-inner > div.back > p {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.flip {
+  transform: rotateX(180deg);
+}
+
+.pages {
+  width: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pages > button {
+  border: 0;
+  background-color: transparent;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.overlay > form.center {
+  width: 500px;
+  position: relative;
+}
+
+.overlay > form.center > button#close {
+  border: 0;
+  position: absolute;
+  background-color: transparent;
+  top: 20px;
+  right: 100px;
+}
+
+.overlay > form.center > p {
+  width: 100%;
+  margin-bottom: 8px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.overlay > form.center > textarea {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 12px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.overlay > form.center > button {
+  margin-top: 8px;
+}
+
+button.clear {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
