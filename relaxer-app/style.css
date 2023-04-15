@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #010f1c;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  background: url("./img/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1, p {
+  color: var(--white);
+}
+
+main {
+  width: 320px;
+  height: 320px;
+  padding: 10px;
+  background: conic-gradient(
+    #55b7a4 0%,
+    #4ca493 calc(100% * 5/13),
+    #fff calc(100% * 5/13),
+    #fff calc(100% * 8/13),
+    #336d62 calc(100% * 8/13),
+    #2a5b52 100%
+  );
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.inside {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.pointer {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+}
+
+.rotate {
+  animation: rotate 13s linear infinite;
+}
+
+.scale {
+  animation: scale 13s linear infinite;
+}
+
+@keyframes rotate {
+  from{
+      transform: rotate(0deg);
+  }
+
+  to{
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  38.46% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  61.54% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
