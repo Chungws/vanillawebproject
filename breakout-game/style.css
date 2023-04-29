@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #0095dd;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--primary-color);
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  appearance: none;
+  border: 0;
+  background-color: black;
+  color: var(--white);
+}
+
+h1, h2, p, article {
+  color: var(--white);
+}
+
+h1 {
+  font-size: 45px;
+}
+
+button#open {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+}
+
+div.rules {
+  width: 400px;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+div.rules.open {
+  transform: translateX(0);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  border-radius: 10px;
+  background-color: var(--white);
+}
