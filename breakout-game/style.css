@@ -21,6 +21,7 @@ button {
   border: 0;
   background-color: black;
   color: var(--white);
+  cursor: pointer;
 }
 
 h1, h2, p, article {

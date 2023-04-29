@@ -65,11 +65,6 @@ class Ball extends Shape {
     return false;
   }
 
-  checkBlocksCollision(blocks) {
-    return blocks.getVisibleBlocks()
-      .map((block) => this.checkBlockCollision(block));
-  }
-
   checkBlockCollision({
     x, y, width, height,
   }) {
@@ -187,12 +182,8 @@ class Blocks {
     this.getVisibleBlocks().forEach((block) => { block.draw(); });
   }
 
-  erase(checks) {
-    checks.forEach((erases, idx) => {
-      if (erases) {
-        this.blocks[idx].erase();
-      }
-    });
+  erase() {
+    this.blocks.forEach((block) => block.erase());
   }
 
   reset() {
@@ -203,7 +194,7 @@ class Blocks {
     this.blocks
       .filter((block) => block.visible && check(block))
       .forEach((block) => {
-        block.visible = false;
+        block.erase();
       });
   }
 
@@ -230,8 +221,6 @@ class Bar extends Block {
     }
   }
 
-  erase() {}
-
   left() {
     this.speed = 8;
   }
@@ -256,8 +245,6 @@ class Text extends Shape {
     this.ctx.font = '20px sans-serif';
     this.ctx.fillText(text, this.x, this.y);
   }
-
-  erase() {}
 }
 
 export {

@@ -14,7 +14,7 @@ function startGame() {
   const text = new Text(ctx, 710, 30, color, 'Score');
   const ball = new Ball(ctx, 400, 550, color, 10);
   const blocks = new Blocks(ctx, color);
-  const bar = new Bar(ctx, 400, 550, color, 150, 10);
+  const bar = new Bar(ctx, 400 - 100 / 2, 550, color, 100, 10);
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Right' || e.key === 'ArrowRight') {
@@ -44,15 +44,22 @@ function startGame() {
     ball.checkBlockCollision(bar);
     ball.checkBoundaryCollision(canvas.height, canvas.width);
 
-    blocks.erase(ball.checkBlocksCollision(blocks));
     blocks.draw();
+    blocks.checkCollision((block) => ball.checkBlockCollision(block));
     if (ball.checkDefeat(canvas.height)) {
       blocks.reset();
+    }
+    if (blocks.getVisibleBlocks().length === 0) {
+      const timer = setTimeout(() => {
+        blocks.reset();
+        clearTimeout(timer);
+      }, 1000);
     }
 
     window.requestAnimationFrame(game);
   }
-  window.requestAnimationFrame(game);
+
+  game();
 }
 
 window.addEventListener('load', startGame);
