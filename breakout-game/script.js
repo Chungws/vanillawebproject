@@ -38,7 +38,6 @@ function startGame() {
     bar.move(canvas.width);
     bar.draw();
 
-    ball.erase();
     ball.move();
     ball.draw();
     ball.checkBlockCollision(bar);

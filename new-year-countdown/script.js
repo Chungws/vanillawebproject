@@ -3,7 +3,7 @@ function countdown() {
 
   const year = now.getFullYear();
   const yearEl = document.querySelector('p.year');
-  yearEl.textContent = `${year}`;
+  yearEl.textContent = `${year + 1}`;
 
   const newYear = new Date(`${year + 1}-01-01:00:00:00`);
 
