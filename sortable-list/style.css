@@ -1,0 +1,98 @@
+:root {
+  --gray: #c3c7ca;
+  --dark-gray: #34444f;
+  --white: #fff;
+  --correct: #3ae374;
+  --wrong: #ff3838;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+button {
+  padding: 10px 20px;
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--gray);
+  color: var(--dark-gray);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  margin-top: 30px;
+  padding: 0;
+  border: 1px solid var(--gray);
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+}
+
+li > span {
+  width: 60px;
+  height: 60px;
+  background-color: var(--gray);
+  text-align: center;
+  font-size: 28px;
+}
+
+li:not(:last-of-type) > span {
+  border-bottom: 1px solid var(--white);
+}
+
+li > div.draggable {
+  width: calc(100% - 60px);
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+li:not(:last-of-type) > div {
+  border-bottom: 1px solid var(--gray);
+}
+
+li > div > p {
+  margin-right: 20px;
+}
+
+li.correct > div > p {
+  color: var(--correct);
+}
+
+li.wrong > div > p {
+  color: var(--wrong);
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.dragover {
+  background-color: #eaeaea;
+}
