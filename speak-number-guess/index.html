@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Speak Number Guess</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="container">
+    <img src="./img/mic.png" alt="microphone" />
+    <h1>Guess a Number Between 1 - 100</h1>
+    <p class="description">Speak the number into your microphone</p>
+    <div class="container result hidden">
+      <p>You said:</p>
+      <div class="word-wrapper">
+        <p></p>
+      </div>
+      <p class="hint"></p>
+    </div>
+    <div class="container congrats">
+      <h2>Congrats! You have guessed the number!</h2>
+      <h2>It was </h2>
+      <button>Play Again</button>
+    </div>
+    <script type="module" src="./script.js" async defer>
+      "use strict";
+    </script>
+  </body>
+</html>
